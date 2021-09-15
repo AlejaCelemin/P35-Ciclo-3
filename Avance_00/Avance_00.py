@@ -5,3 +5,39 @@
 ############  AVANCE_00 ################
 
 ##### Login ######
+
+from tkinter import *
+from tkinter.ttk import *
+
+root = Tk()
+root.title("Login")
+root.geometry("300x150")
+root.resizable(width=False, height=False)
+root.config(bg="pink")
+
+usuario=Label(root, text="Ingrese nombre de usuario:")
+usuario.pack()
+
+usuario1 =StringVar()
+usu=Entry(root, width=30, textvariable=usuario1)
+usu.pack()
+
+contraseña=Label(root, text="contraseña:")
+contraseña.pack()
+
+contra=StringVar()
+contra1=Entry(root, width=30, textvariable=contra, show="*")
+contra1.pack()
+
+def ingresar():
+    if usuario1.get()=="admininicial" and contra.get()=="admi123456":
+        root.title("Si puede Ingresar")
+    else:
+        root.title("Incorrecto")
+
+bt=Button(root, text="Entrar", command=ingresar)
+bt.pack(side=BOTTOM)
+
+
+root.mainloop()
+
