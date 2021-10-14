@@ -28,10 +28,11 @@ class UserManager(BaseUserManager):
         return user
 
 class User(AbstractBaseUser, PermissionsMixin):
-    id = models.BigAutoField(primary_key=True)
+    cedula = models.BigIntegerField(primary_key=True)
     username = models.CharField('Username', max_length = 15, unique=True)
     password = models.CharField('Password', max_length = 256)
     name = models.CharField('Name', max_length = 30)
+    addres = models.CharField('adress', max_length = 50)
     email = models.EmailField('Email', max_length = 100)
 
     def save(self, **kwargs):

@@ -1,9 +1,10 @@
 from django.db import models
 from .clientes import User
 
+
 class facturas (models.Model):
-    id = models.AutoField(primary_key=True)
-    user = models.ForeignKey(User, related_name='account', on_delete=models.CASCADE)
-    balance = models.IntegerField(default=0)
+    id_bill = models.AutoField(primary_key=True)
     fecha = models.DateTimeField()
-    isActive = models.BooleanField(default=True)
+    clientes = models.ForeignKey(User, related_name='facturas', on_delete=models.CASCADE)
+  
+    
