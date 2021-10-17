@@ -102,10 +102,10 @@ WSGI_APPLICATION = 'Licores.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'licores_donmintic',
-        'USER': 'postgres',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',
+        'NAME': 'd8r121ibk51855',
+        'USER': 'ywbqjgibisrhzd',
+        'PASSWORD': 'b7fa62e4e64000a10dbc75473d839a9eb7e875eb1a368c2e525b950954b58511',
+        'HOST': 'ec2-52-203-164-61.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }

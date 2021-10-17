@@ -1,11 +1,9 @@
 from django.contrib import admin
 
 from .models.user import User
-from .models.facturas import facturas
-from .models.productos import productos
-from .models.ventas import ventas
+from .models.productos import Productos
+from .models.ventas import Ventas
 
 admin.site.register(User)
-admin.site.register(facturas)
-admin.site.register(productos)
-admin.site.register(ventas)
+admin.site.register(Productos)
+admin.site.register(Ventas)

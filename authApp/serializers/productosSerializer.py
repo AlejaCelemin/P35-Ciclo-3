@@ -1,8 +1,8 @@
 from django.db.models import fields
-from authApp.models.productos import productos
+from authApp.models.productos import Productos
 from rest_framework          import serializers
 
-class productosSerializer(serializers.ModelSerializer):
+class ProductosSerializer(serializers.ModelSerializer):
     class Meta:
-        model  = productos
-        fields = ['description', 'price']
+        model  = Productos
+        fields = ['id_producto', 'description','price']

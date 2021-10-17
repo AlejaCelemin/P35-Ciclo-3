@@ -1,8 +1,8 @@
 from django.db.models import fields
-from authApp.models.ventas import ventas
+from authApp.models.ventas import Ventas
 from rest_framework          import serializers
 
-class ventasSerializer(serializers.ModelSerializer):
+class VentasSerializer(serializers.ModelSerializer):
     class Meta:
-        model  = ventas
-        fields = ['quantity', 'productos', 'facturas']
+        model  = Ventas
+        fields = ['quantity', 'fecha']
