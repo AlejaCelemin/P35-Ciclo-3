@@ -25,4 +25,8 @@ urlpatterns = [
     path('refresh/', TokenRefreshView.as_view()),
     path('user/', views.UserCreateView.as_view()),
     path('user/<int:pk>/', views.UserDetailView.as_view()),
+    path('ventas/', views.VentasCreateView.as_view()),
+    path('ventas/<int:user>/<int:pk>/', views.VentasDetailView.as_view()),
+    path('ventas/<int:user>/<int:producto>/', views.VentasProductosView.as_view()),
+    path('ventas/remove/<int:user>/<int:pk>/', views.VentasDeleteView.as_view()),
 ]
