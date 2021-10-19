@@ -1,12 +1,11 @@
 from authApp.models.user                     import User
-from authApp.models.ventas                   import Ventas
 from rest_framework                          import serializers
-from authApp.serializers.ventasSerializer    import VentasSerializer
+
 
 
 
 class UserSerializer(serializers.ModelSerializer):
-    ventas = VentasSerializer()
+
 
 
     class Meta:
