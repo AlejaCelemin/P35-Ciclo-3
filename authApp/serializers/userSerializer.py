@@ -11,17 +11,15 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'password', 'name', 'addres', 'email','ventas']
+        fields = ['id', 'username', 'password', 'name', 'addres', 'email']
 
     def create(self, validated_data):
-        ventasData = validated_data.pop('ventas')
         userInstance = User.objects.create(**validated_data)
-        Ventas.objects.create(user=userInstance, **ventasData)
         return userInstance
 
     def to_representation(self, obj):
         user = User.objects.get(id=obj.id)
-        ventas = Ventas.objects.get(user=obj.id)
+
 
 
         return {
@@ -30,10 +28,7 @@ class UserSerializer(serializers.ModelSerializer):
             "name": user.name,
             "addres": user.addres,
             "email": user.email,
-            'ventas': {
-                 "id": ventas.id,
-                 "quantity":ventas.quantity,
-                 "fecha":ventas.fecha            
+          
 
-             }
+             
         }
