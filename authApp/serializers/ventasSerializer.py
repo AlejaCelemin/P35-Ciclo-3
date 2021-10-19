@@ -16,7 +16,7 @@ class VentasSerializer(serializers.ModelSerializer):
 
             "id": ventas.id,
             "quantity": ventas.quantity,
-            "fecha": ventas.fecha,
+            "fecha": ventas.fecha
 
 
         }
