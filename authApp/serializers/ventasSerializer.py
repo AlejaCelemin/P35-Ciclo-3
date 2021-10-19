@@ -10,7 +10,6 @@ class VentasSerializer(serializers.ModelSerializer):
         fields = ['quantity', 'fecha']
 
     def to_representation(self, obj):
-        productos = Productos.objects.get(id=obj.productos)
         ventas    = Ventas.objects.get(id=obj.id)
 
         return {

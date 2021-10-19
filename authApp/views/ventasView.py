@@ -6,7 +6,7 @@ from rest_framework.response import Response
 from rest_framework.serializers import Serializer
 from rest_framework_simplejwt.backends import TokenBackend
 from rest_framework.permissions import IsAuthenticated
-from authApp.models import productos
+# from authApp.models import productos
 
 from authApp.models.ventas import Ventas
 from authApp.serializers.ventasSerializer import VentasSerializer
