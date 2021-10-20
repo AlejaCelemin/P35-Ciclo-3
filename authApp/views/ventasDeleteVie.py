@@ -11,25 +11,7 @@ from rest_framework.permissions import IsAuthenticated
 from authApp.models.ventas import Ventas
 from authApp.serializers.ventasSerializer import VentasSerializer
 
-class VentasProductosView(generics.ListAPIView):
-    serializer_class = VentasSerializer
-   # permission_classes = (IsAuthenticated,)
 
-    def get_queryset(self):
-        print("Request:", self.request)
-        print("Args:",self.args)
-        print("KWArgs:",self.kwargs)
-
-        """token = self.request.META.get('HTTP_AUTHORIZATION')[7:]
-        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
-        valid_data = tokenBackend.decode(token,verify=False)
-
-        if valid_data['user_id'] != self.kwargs['user']:
-            stringResponse = {'detail':'Unauthorized Request'}
-            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)
-        """
-        QuerySet = Ventas.objects.filter(productos_id=self.kwargs['productos'])        
-        return QuerySet
 
 class  VentasDetailView (generics.RetrieveAPIView):
     serializer_class =VentasSerializer
@@ -58,7 +40,7 @@ class VentasUpdateView (generics.UpdateAPIView):
     permission_classes = (IsAuthenticated,)
     queryset = Ventas.objects.all()
 
-    def get (self, request, *args, **kwargs):
+    def update (self, request, *args, **kwargs):
         print("Request:",request)
         print("Args:", args)
         print("KWArgs:", kwargs)
