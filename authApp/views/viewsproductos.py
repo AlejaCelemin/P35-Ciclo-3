@@ -12,21 +12,13 @@ from authApp.serializers.productosSerializer import ProductosSerializer
 
 class ProductosCreateView(generics.CreateAPIView):
     serializer_class =ProductosSerializer
-    permission_classes = (IsAuthenticated,)
+
 
     def post(self, request, *args, **kwargs):
         print("Request",request)
         print("Args", args)
         print("KWArgs", kwargs)
-        token = request.META.get('HTTP_AUTHORIZATION')[7:]
-        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
-        valid_data = tokenBackend.decode(token,verify=False)
-
-        if True: 
-            stringResponse = kwargs
-      #  if valid_data['user_id'] != kwargs['pk']:
-        #    stringResponse = {'detail':'Unauthorized Request'}
-            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED) 
+  
             
         serializer = ProductosSerializer(data = request.data['productos_data'])
         serializer.is_valid(raise_exception=True)
