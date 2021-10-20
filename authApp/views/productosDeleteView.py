@@ -14,13 +14,7 @@ class ProductosDeleteView(generics.DestroyAPIView):
     serializer_class =ProductosSerializer
     queryset = Productos.objects.all()
 
-    def deliete(self, request, *args, **kwargs):
-        token        = request.META.get('HTTP_AUTHORIZATION')[7:]
-        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
-        valid_data   = tokenBackend.decode(token,verify=False)
-        
-        if valid_data['user_id'] != kwargs['user']:
-            stringResponse = {'detail':'Unauthorized Request'}
-            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)
+    def delete(self, request, *args, **kwargs):
+ 
 
         return super().destroy(request, *args, **kwargs)
