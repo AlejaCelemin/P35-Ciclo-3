@@ -21,7 +21,7 @@ class VentasSerializer(serializers.ModelSerializer):
         return ventainstancia
 
     def to_representation(self, obj):
-        productos = Productos.objects.get(id=obj.productos)
+        productos = Productos.objects.get(id=obj.id_productos)
         ventas    = Ventas.objects.get(id=obj.id)
         user      = User.objects.get(id=obj.id)
 
