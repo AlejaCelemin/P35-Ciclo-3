@@ -22,10 +22,12 @@ class ProductosCreateView(generics.CreateAPIView):
         tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
         valid_data = tokenBackend.decode(token,verify=False)
 
-        if valid_data['user_id'] != kwargs['pk']:
-            stringResponse = {'detail':'Unauthorized Request'}
+        if True: 
+            stringResponse = kwargs
+      #  if valid_data['user_id'] != kwargs['pk']:
+        #    stringResponse = {'detail':'Unauthorized Request'}
             return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED) 
-
+            
         serializer = ProductosSerializer(data = request.data['productos_data'])
         serializer.is_valid(raise_exception=True)
         serializer.save()
