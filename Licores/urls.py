@@ -30,6 +30,6 @@ urlpatterns = [
     path('ventas/<int:user>/<int:producto>/', views.VentasProductosView.as_view()),
     path('ventas/remove/<int:user>/<int:pk>/', views.VentasDeleteView.as_view()),
     path('productos/', views.ProductosCreateView.as_view()),
-    path('productos/remove/<int:user>/<int:pk>/', views.ProductosDeleteView.as_view()),
+    path('productos/remove/<int:pk>/', views.ProductosDeleteView.as_view()),
 
 ]
