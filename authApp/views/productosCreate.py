@@ -27,15 +27,5 @@ class ProductosCreateView(generics.CreateAPIView):
         return Response("Producto creado", status=status.HTTP_201_CREATED)
 
 
-class ProductosDeleteView(generics.DestroyAPIView):
-    serializer_class =ProductosSerializer
-    queryset = Productos.objects.all()
 
-    def get(self, request, *args, **kwargs):
-        print("Request",request)
-        print("Args", args)
-        print("KWArgs", kwargs)
-
-
-        return super().destroy(request, *args, **kwargs)
     

@@ -9,6 +9,13 @@ class VentasSerializer(serializers.ModelSerializer):
         model  = Ventas
         fields = ['quantity', 'fecha','productos']
 
+    def create(self, validated_data):
+        productos_data = validated_data.pop('productos')
+        ventainstancia = Ventas.objects.create(**validated_data)
+        Productos.objects.create(ventas = ventainstancia,**productos_data)
+
+        return ventainstancia
+
     def to_representation(self, obj):
         productos = Productos.objects.get(id=obj.productos)
         ventas    = Ventas.objects.get(id=obj.id)
