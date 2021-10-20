@@ -26,8 +26,5 @@ class UserSerializer(serializers.ModelSerializer):
             "username": user.username,
             "name": user.name,
             "addres": user.addres,
-            "email": user.email,
-          
-
-             
+            "email": user.email, 
         }

@@ -7,4 +7,15 @@ class ProductosSerializer(serializers.ModelSerializer):
         model  = Productos
         fields = ['id_producto', 'description','price']
 
+    def to_representation(self, obj):
+        productos = Productos.objects.get(id=obj.productos)
+
+
+
+        return {
+            "id_producto": productos.id_producto,
+            "description":productos.description,
+            "price":productos.price
+        }
+
 

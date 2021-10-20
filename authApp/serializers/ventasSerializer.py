@@ -19,7 +19,7 @@ class VentasSerializer(serializers.ModelSerializer):
             "quantity": ventas.quantity,
             "fecha": ventas.fecha,
 
-            'productos': {
+            "productos": {
                  "id_producto": productos.id_producto,
                  "description":productos.description,
                  "price":productos.price
