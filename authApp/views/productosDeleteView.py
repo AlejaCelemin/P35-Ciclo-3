@@ -16,7 +16,7 @@ class ProductosDeleteView(generics.DestroyAPIView):
     queryset = Productos.objects.all()
 
     def delete(self, request, pk =None):
-        queryset = Productos.objects.filter(id= pk).first()
+        queryset = Productos.objects.filter(id_producto= pk).first()
         queryset.delete()
 
         return Response(status=status.HTTP_204_NO_CONTENT)
