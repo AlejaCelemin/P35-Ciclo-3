@@ -18,20 +18,7 @@ class VentasCreateView(generics.CreateAPIView):
 
     def post(self, request, *args, **kwargs):
 
-        """token = request.META.get('HTTP_AUTHORIZATION')[7:]
-        tokenBackend = TokenBackend(algorithm=settings.SIMPLE_JWT['ALGORITHM'])
-        valid_data = tokenBackend.decode(token,verify=False)
-
-        if valid_data['user_id'] != kwargs['user']:
-            stringResponse = {'detail':'Unauthorized Request'}
-            return Response(stringResponse, status=status.HTTP_401_UNAUTHORIZED)
-"""
-        productos = Productos.objects.get(id=request.data['ventas_data']['productos'])
-        productos.save() 
-
-
-
-        serializer = VentasSerializer(data=request.data['ventas_data'])
+        serializer = VentasSerializer(data=request.data)
         serializer.is_valid(raise_exception=True)
         serializer.save()
 
