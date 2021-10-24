@@ -1,0 +1,54 @@
+<html>
+<head>
+<title>CRUD DE FACTURACION</title>
+
+<meta name="viewport" content="user-scalable=no, width=device,with" charset="utf-8" />
+<link rel="stylesheet" type="text/css" href="libs/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="libs/css/estilos.css" />
+
+<script type="text/javascript" src="libs/js/jquery.js"></script>
+<script type="text/javascript" src="libs/js/crud.js"></script>
+</head>
+
+<body>
+    
+<h1> FACTURA </h1>
+
+<div class="container">
+
+<div class="row">
+    <form>
+    <fieldset>
+    <p>Numero Factura: <input type="number" id="factura">
+    Fecha: <input type="date" id="fecha"></p>
+    <p>Nombre Cliente: <input type="text" size="45" id="cliente">
+    Teléfono: <input type="tel" size="20" name="telefono"></p>
+    <p>Dirección:      <input type="text" size="90" id="direccion"></p>
+    </fieldset>
+    </form>
+<form>
+<fieldset>
+    <p>Producto: <input type="text" class="form-control" id="item"/>
+    <p>Cantidad: <input type="number" class="form-control" id="cantidad"/>  
+    <p>Precio: <input type="number" class="form-control" id="precio"/>
+<br />
+<button type="button" id="crear" class="btn btn-success">Crear Tabla </button>
+<button type="button" id="insertar" class="btn btn-success">Insertar Registro </button>
+<button type="button" id="modificar" class="btn btn-danger">Modificar Registro </button>
+<button type="button" id="listar" class="btn btn-success">Mostrar/Actualizar </button>
+<button type="button" id="borrarTodo" class="btn btn-danger">ELIMINAR TODO </button>
+<button type="button" id="generarFactura" class="btn btn-success">Imprimir Factura</button>
+</fieldset>
+</form>
+<hr />
+<h4> LISTA DE PRODUCTOS </h4>
+<table class="table table-borderer table-hover" id="listaProductos" style="width:915px">
+
+</table>
+</div>
+
+</div>
+
+</body>
+
+</html>
